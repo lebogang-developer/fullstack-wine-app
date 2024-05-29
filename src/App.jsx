@@ -42,32 +42,26 @@ const App = () => {
 
   return (
     <>
-      <Router>
-        <div className="min-h-screen bg-gray-100">
-          <h1 className="text-3xl font-bold text-center py-6">My Wines App</h1>
-          {/* <h3>Login</h3> */}
-          <Routes>
-            <Route
-              path='/login'
-              element={<LoginPage onLogin={handleLogin} />}
-            />
-            <Route
-              path='/wines'
-              element={
-                <ProtectedRoute>
-                  <AddWinePage onSave={handleSave} wineToEdit={wineToEdit} />
-                  <WineListPage
-                    wines={wines}
-                    onEdit={handleEdit}
-                    onDelete={handleDelete}
-                  />
-                </ProtectedRoute>
-              }
-            />
-            <Route path='/' element={<LoginPage onLogin={handleLogin} />} />
-          </Routes>
-        </div>
-      </Router>
+      <div className='min-h-screen bg-gray-100'>
+        <h1 className='text-3xl font-bold text-center py-6'>My Wines App</h1>
+        <Routes>
+          <Route path='/login' element={<LoginPage onLogin={handleLogin} />} />
+          <Route
+            path='/wines'
+            element={
+              <ProtectedRoute>
+                <AddWinePage onSave={handleSave} wineToEdit={wineToEdit} />
+                <WineListPage
+                  wines={wines}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route path='/' element={<LoginPage onLogin={handleLogin} />} />
+        </Routes>
+      </div>
     </>
   );
 };
