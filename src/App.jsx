@@ -43,8 +43,8 @@ const App = () => {
   return (
     <>
       <Router>
-        <div>
-          <h1>My Wines App</h1>
+        <div className="min-h-screen bg-gray-100">
+          <h1 className="text-3xl font-bold text-center py-6">My Wines App</h1>
           {/* <h3>Login</h3> */}
           <Routes>
             <Route
